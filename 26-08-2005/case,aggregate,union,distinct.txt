@@ -1,0 +1,79 @@
+show databases;
+create database employee;
+use employee;
+create table Worker(
+	WORKER_ID INT NOT NULL PRIMARY KEY ,
+	FIRST_NAME CHAR(25),
+	LAST_NAME CHAR(25),
+	SALARY INT(15),
+	JOINING_DATE DATETIME,
+    DEPARTMENT varchar(10)
+);
+INSERT INTO Worker 
+	(WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES
+		(001, 'Monika', 'Arora', 100000, '14-02-20 09.00.00', 'HR'),
+		(002, 'Niharika', 'Verma', 80000, '14-06-11 09.00.00', 'Admin'),
+		(003, 'Vishal', 'Singhal', 300000, '14-02-20 09.00.00', 'HR'),
+		(004, 'Amitabh', 'Singh', 500000, '14-02-20 09.00.00', 'Admin'),
+		(005, 'Vivek', 'Bhati', 500000, '14-06-11 09.00.00', 'Admin'),
+		(006, 'Vipul', 'Diwan', 200000, '14-06-11 09.00.00', 'Account'),
+		(007, 'Satish', 'Kumar', 75000, '14-01-20 09.00.00', 'Account'),
+		(008, 'Geetika', 'Chauhan', 90000, '14-04-11 09.00.00', 'Admin');
+select *from Worker;
+drop table Worker;
+
+
+select min(salary) as
+ minbudget from Worker   ;
+
+select max(salary) as
+ maxbudget from Worker   ;
+
+select  count(salary) as
+ count_no from Worker   ;
+
+select sum(salary) as 
+totalsal from Worker   ;
+
+select avg(salary) as
+ avgsal from Worker   ;
+
+select FIRST_NAME,min(salary) as minsal from Worker
+where department in ("HR")
+group by FIRST_NAME;
+
+select avg(salary) from Worker
+where department in("Admin");
+
+select sum(salary) from Worker
+where department in("HR","Admin");
+
+select sum(salary) from Worker
+where department in("HR","Account");
+
+select count(*) from Worker
+where FIRST_NAME like "V%";
+
+select sum(salary) from Worker
+where salary between 50000 and 200000;
+
+select salary from Worker
+union 
+select FIRST_NAME from Worker;
+
+select salary from Worker
+union all
+select FIRST_NAME from Worker;
+
+
+select FIRST_NAME,SALARY,
+case 
+	when salary >=300000 then "rich"
+    when salary>=100000 and salary <=300000 then "middleclass"
+    else "poor"
+end
+as case_statement
+from Worker;
+
+select distinct(department) as unique_val from Worker
+where salary >=200000;
