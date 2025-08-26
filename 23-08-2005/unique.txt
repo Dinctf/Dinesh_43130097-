@@ -1,0 +1,23 @@
+show databases;
+create database Login;
+use login;
+
+create table persons(
+id int not null,
+firstname varchar(30) not null,
+middlename varchar(20),
+lastname varchar(40) not null,
+primary_mobile_number bigint not null,
+secondary_mobile_number bigint,
+unique(id)
+);
+alter table persons
+add unique(primary_mobile_number,secondary_mobile_number);
+desc persons;
+insert into persons 
+(id,firstname,lastname,primary_mobile_number)
+values(001,'Darwin','Marshel',8610538326);
+select *from persons;
+insert into persons 
+values(002,'Mukesh',null,'kannan',908076756,null);
+select *from persons;

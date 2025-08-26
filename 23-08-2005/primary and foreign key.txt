@@ -1,0 +1,31 @@
+show databases;
+create database amazon;
+use amazon;
+
+create table category(
+cid int primary key,
+cname varchar(50) not null
+);
+ insert into category 
+ values( 1001, 'Electronics'),
+ (1002, 'Wearables');
+ 
+ create table product(
+ pid int primary key,
+ pname varchar(50) not null,
+ cid int not null,
+ foreign key (cid) references category(cid)
+ );
+ insert into product
+ values (001,'TWS',1001),
+ (002,'White T-shirt',1002),
+ (003,'AC 1-ton',1001);
+ select *from category;
+ select *from product;
+ 
+ delete from product
+ where cid='1002';
+ 
+ update product set cid = '1003'
+ where cid = '1001';
+ select *from category;
