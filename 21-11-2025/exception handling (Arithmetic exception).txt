@@ -1,0 +1,26 @@
+package project1;
+import java.util.Scanner;
+
+public class OMRKing {
+
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in);
+
+        try {
+            System.out.println("enter a value:");
+            int a = s.nextInt();
+
+            System.out.println("enter b value:");
+            int b = s.nextInt();
+
+            System.out.println("op is " + (a / b));
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        }
+        finally {
+            System.out.println("Program End");
+        }
+    }
+}

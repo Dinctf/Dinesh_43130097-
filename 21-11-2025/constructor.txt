@@ -1,0 +1,23 @@
+package project1;
+
+public class OMRKing {
+    public static void main(String[] args) {
+        Student s1 = new Student();              
+        Student s2 = new Student("Bharat");       
+        Student s3 = new Student(101, "BB");      
+    }
+}
+class Student {
+
+    Student() {
+        System.out.println("Default Constructor Called");
+    }
+
+    Student(String name) {
+        System.out.println("Student Name: " + name);
+    }
+
+    Student(int id, String name) {
+        System.out.println("Student ID: " + id + ", Name: " + name);
+    }
+}
