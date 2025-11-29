@@ -1,0 +1,7 @@
+BLANK 1: Theme Switcher Demo
+
+BLANK 2: 0.3s ease
+
+BLANK 3: #282c34
+
+BLANK 4: #5C6773

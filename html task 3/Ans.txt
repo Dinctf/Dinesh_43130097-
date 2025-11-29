@@ -1,0 +1,5 @@
+BLANK 1: Navigation Bar Styling
+BLANK 2: About
+BLANK 3: none
+BLANK 4: inline-block
+BLANK 5: white
